@@ -1,0 +1,23 @@
+version: '3'
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: tink
+    tty: true
+    working_dir: /app
+    ports:
+      - "4444:4444"
+    volumes:
+      - ./:/app
+    environment:
+      DATABASE_URL: "postgresql://user:password@plants-server-database/plants"
+    command: [
+        "pipenv",
+        "run",
+        "python",
+        "main.py",
+    ]
