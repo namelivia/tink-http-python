@@ -4,3 +4,4 @@ authorization_code
 *.egg-info
 __pycache__/
 .env
+categories
