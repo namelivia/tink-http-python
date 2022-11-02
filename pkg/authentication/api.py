@@ -20,7 +20,6 @@ class Api:
 
     def get_new_access_token(self, client_id, client_secret, code) -> dict:  # GetAcessTokenResponse:
 
-        # This is requesting a token of type CLIENT TOKEN
         response = self.api.post("oauth/token", {}, {
             'client_id': client_id,
             'code': code,

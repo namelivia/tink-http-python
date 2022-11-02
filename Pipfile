@@ -8,6 +8,8 @@ pudb = "*"
 
 [packages]
 requests = "*"
+pydantic = "*"
+pyhumps = "*"
 
 [requires]
 python_version = "3.8"
