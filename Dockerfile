@@ -11,4 +11,3 @@ EXPOSE 4444
 
 FROM builder AS production
 RUN pipenv install
-CMD ["pipenv", "run", "python", "main.py"]

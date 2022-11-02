@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
       target: development
     container_name: tink
-    tty: true
+    stdin_open: true
     working_dir: /app
     ports:
       - "4444:4444"
