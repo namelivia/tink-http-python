@@ -13,8 +13,6 @@ services:
       - "4444:4444"
     volumes:
       - ./:/app
-    environment:
-      DATABASE_URL: "postgresql://user:password@plants-server-database/plants"
     command: [
         "pipenv",
         "run",
