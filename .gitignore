@@ -5,3 +5,4 @@ authorization_code
 __pycache__/
 .env
 categories
+output.csv
