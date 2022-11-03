@@ -8,8 +8,9 @@ pudb = "*"
 
 [packages]
 requests = "*"
-pydantic = "*"
 pyhumps = "*"
+dataclass-map-and-log = "*"
+pydantic = "==1.8.2"
 
 [requires]
 python_version = "3.8"

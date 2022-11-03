@@ -1,6 +1,6 @@
 from pkg.api import ApiV2
 from pkg.authentication.authentication import Authentication
-from pkg.dataclass_wrapper.dataclass_wrapper import DataclassWrapper
+from dataclass_map_and_log.mapper import DataclassMapper
 import humps
 from .transaction import TransactionsPage
 
@@ -11,7 +11,7 @@ class Transactions:
         self.auth = Authentication()
 
     def get(self):
-        return DataclassWrapper.wrap(
+        return DataclassMapper.map(
             TransactionsPage,
             humps.decamelize(self.api.get("transactions", {
                 'Authorization': f"Bearer {self.auth.get_access_token()}"
