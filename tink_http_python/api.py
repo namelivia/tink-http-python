@@ -13,7 +13,7 @@ class AbstractAPI(ABC):
     def post(self, uri: str, headers: dict, data: dict) -> dict:
         response = requests.post(self._build_url(uri), data=data, headers=headers)
         if response.status_code == 200:
-            return response
+            return response.json()
         print(response.__dict__)
         exit()
 
