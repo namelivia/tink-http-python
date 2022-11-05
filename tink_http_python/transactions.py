@@ -24,11 +24,3 @@ class Transactions:
     @staticmethod
     def calculate_real_amount(value):
         return int(value.unscaled_value) / (10 ** int(value.scale))
-
-    @staticmethod
-    def render(transaction):
-        print("==========================")
-        print(transaction.dates.value)
-        print(transaction.descriptions.original)
-        print(Transactions.calculate_real_amount(transaction.amount.value))
-        print("==========================")

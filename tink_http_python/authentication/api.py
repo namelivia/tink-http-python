@@ -5,9 +5,7 @@ class Api:
     def __init__(self, api: ApiV1):
         self.api = api
 
-    def refresh_token(
-        self, client_id, client_secret, token
-    ) -> dict:  # GetAcessTokenResponse:
+    def refresh_token(self, client_id, client_secret, token) -> dict:
 
         return self.api.post(
             "oauth/token",
@@ -20,9 +18,7 @@ class Api:
             },
         )
 
-    def get_new_access_token(
-        self, client_id, client_secret, code
-    ) -> dict:  # GetAcessTokenResponse:
+    def get_new_access_token(self, client_id, client_secret, code) -> dict:
 
         return self.api.post(
             "oauth/token",
