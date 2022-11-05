@@ -1,24 +1,17 @@
-import os
-
-# import json
 from tink_http_python.authentication.authentication import Authentication
 from tink_http_python.authentication.storage import Storage
 from tink_http_python.api import ApiV1
-from mock import Mock, patch
+from tink_http_python.config import Config
+from mock import Mock
 
 
 class TestAccounts:
     def setup_method(self):
         self.api = Mock(spec=ApiV1)
         self.storage = Mock(spec=Storage)
-        self.authentication = Authentication(self.api, self.storage)
+        self.config = Config(client_id="CLIENT_ID", client_secret="CLIENT_SECRET")
+        self.authentication = Authentication(self.api, self.storage, self.config)
 
-    # TODO: Currently only testing happy paths
-    @patch.dict(
-        os.environ,
-        {"TINK_CLIENT_ID": "CLIENT_ID", "TINK_CLIENT_SECRET": "CLIENT_SECRET"},
-        clear=True,
-    )
     def test_get_refresh_token(self):
         self.storage.retrieve_authorization_code.return_value = "AUTHORIZATION_CODE"
         self.api.post.return_value = {"refresh_token": "REFRESH_TOKEN"}
@@ -37,11 +30,6 @@ class TestAccounts:
             "REFRESH_TOKEN"
         )
 
-    @patch.dict(
-        os.environ,
-        {"TINK_CLIENT_ID": "CLIENT_ID", "TINK_CLIENT_SECRET": "CLIENT_SECRET"},
-        clear=True,
-    )
     def test_get_access_token(self):
         self.storage.retrieve_refresh_token.return_value = "REFRESH_TOKEN"
         self.api.post.return_value = {
