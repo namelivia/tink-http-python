@@ -1,12 +1,13 @@
 from .storage import Storage
+from tink_http_python.api import ApiV1
 from .api import Api
 import os
 
 
 class Authentication:
-    def __init__(self):
-        self.storage = Storage()
-        self.api = Api()
+    def __init__(self, api: ApiV1, storage: Storage):
+        self.storage = storage
+        self.api = Api(api)
 
     def _get_tink_link(self):
         client_id = os.environ.get("TINK_CLIENT_ID")
@@ -20,22 +21,23 @@ class Authentication:
             print(self._get_tink_link())
             exit()
         token_response = self.api.get_new_access_token(
-            os.environ.get("TINK_CLIENT_ID"),
-            os.environ.get("TINK_CLIENT_SECRET"),
-            code
-        ).json()
-        self.storage.store_new_refresh_token_refresh_token(token_response["refresh_token"])
+            os.environ.get("TINK_CLIENT_ID"), os.environ.get("TINK_CLIENT_SECRET"), code
+        )
+        self.storage.store_new_refresh_token_refresh_token(
+            token_response["refresh_token"]
+        )
 
     def get_access_token(self) -> str:
         try:
             refresh_token = self.storage.retrieve_refresh_token()
         except FileNotFoundError:
-            print("Refresh token not found, generating a new one")
             refresh_token = self.get_refresh_token()
         token_response = self.api.refresh_token(
             os.environ.get("TINK_CLIENT_ID"),
             os.environ.get("TINK_CLIENT_SECRET"),
-            refresh_token
-        ).json()
-        self.storage.store_new_refresh_token_refresh_token(token_response["refresh_token"])
+            refresh_token,
+        )
+        self.storage.store_new_refresh_token_refresh_token(
+            token_response["refresh_token"]
+        )
         return token_response["access_token"]

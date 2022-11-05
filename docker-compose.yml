@@ -1,21 +1,14 @@
 version: '3'
 services:
 
-  app:
+  tink-python-api-types:
     build:
       context: .
       dockerfile: Dockerfile
       target: development
-    container_name: tink
-    stdin_open: true
+    container_name: tink-http-python
+    entrypoint: "pipenv run pytest"
+    tty: false
     working_dir: /app
-    ports:
-      - "4444:4444"
     volumes:
       - ./:/app
-    command: [
-        "pipenv",
-        "run",
-        "python",
-        "main.py",
-    ]

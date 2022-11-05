@@ -4,12 +4,19 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pytest = "*"
+pytest-cov = "*"
 pudb = "*"
+codecov = "*"
+black = "*"
+pre-commit = "*"
+mock = "*"
 
 [packages]
 requests = "*"
 pyhumps = "*"
 dataclass-map-and-log = "*"
+tink-python-api-types = "*"
 pydantic = "==1.8.2"
 
 [requires]
