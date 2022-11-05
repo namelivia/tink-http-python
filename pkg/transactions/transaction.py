@@ -42,6 +42,7 @@ class Transaction:
     categories: Categories
     status: str
     provider_mutability: str
+    reference: str = None
 
 
 @dataclass
