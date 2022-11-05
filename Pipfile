@@ -10,6 +10,7 @@ pudb = "*"
 codecov = "*"
 black = "*"
 pre-commit = "*"
+mock = "*"
 
 [packages]
 requests = "*"

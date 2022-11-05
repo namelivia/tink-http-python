@@ -6,9 +6,9 @@ from tink_python_api_types.account import AccountsPage
 
 
 class Accounts:
-    def __init__(self):
-        self.api = ApiV2()
-        self.auth = Authentication()
+    def __init__(self, api: ApiV2, auth: Authentication):
+        self.api = api
+        self.auth = auth
 
     def get(self):
         return DataclassMapper.map(
@@ -17,6 +17,6 @@ class Accounts:
                 self.api.get(
                     "accounts",
                     {"Authorization": f"Bearer {self.auth.get_access_token()}"},
-                ).json()
+                )
             ),
         )
