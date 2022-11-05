@@ -6,7 +6,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="tink-http-python",
-    version="0.0.3",
+    version="0.0.6",
     description="Python SDK for accessing the tink API ",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -26,7 +26,7 @@ setup(
     install_requires=[
         "tink-python-api-types",
         "requests",
-        "dataclass-map-and-log",
+        "dataclass-map-and-log==1.1.2",
         "pyhumps",
     ],
     packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),

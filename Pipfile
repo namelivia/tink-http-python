@@ -15,9 +15,8 @@ mock = "*"
 [packages]
 requests = "*"
 pyhumps = "*"
-dataclass-map-and-log = "*"
+dataclass-map-and-log = "==0.1.2"
 tink-python-api-types = "*"
-pydantic = "==1.8.2"
 
 [requires]
 python_version = "3.8"
