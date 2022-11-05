@@ -2,7 +2,7 @@ from pkg.api import ApiV2
 from pkg.authentication.authentication import Authentication
 from dataclass_map_and_log.mapper import DataclassMapper
 import humps
-from .account import AccountsPage
+from tink_python_api_types.account import AccountsPage
 
 
 class Accounts:
