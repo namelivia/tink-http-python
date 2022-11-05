@@ -26,7 +26,7 @@ setup(
     install_requires=[
         "tink-python-api-types",
         "requests",
-        "dataclass_map_and_log",
+        "dataclass-map-and-log",
         "pyhumps",
     ],
     packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
