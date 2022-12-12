@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a3e424936d355bcbd73e9cc8c096aafba5994314734e784c60816083b642ead8"
+            "sha256": "70b0df2b273d0927cdf1567de0abc19d122e295df083a4192ef1ae2a1bdb43a2"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -21,7 +21,7 @@
                 "sha256:35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3",
                 "sha256:4ad3232f5e926d6718ec31cfc1fcadfde020920e278684144551c91769c7bc18"
             ],
-            "markers": "python_full_version >= '3.6.0'",
+            "markers": "python_version >= '3.6'",
             "version": "==2022.12.7"
         },
         "charset-normalizer": {
@@ -94,11 +94,11 @@
         },
         "tink-python-api-types": {
             "hashes": [
-                "sha256:1c08fef69d1958da74794e05448304d4e2915c8b1836730f5b699cce311649e1",
-                "sha256:91ede465879eb10cbdf49d795f210505663a2ff7c9e8324f2670d30b352a2713"
+                "sha256:745e122220b1aa58cd877db5b7b287776da65750cf71ea09282f648ec1f4f159",
+                "sha256:e0dfa5e09ec137e6541822f9d641cbe46a90f776417f81d04a9942e105038b27"
             ],
             "index": "pypi",
-            "version": "==0.0.1"
+            "version": "==0.0.2"
         },
         "typing-extensions": {
             "hashes": [
@@ -149,7 +149,7 @@
                 "sha256:35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3",
                 "sha256:4ad3232f5e926d6718ec31cfc1fcadfde020920e278684144551c91769c7bc18"
             ],
-            "markers": "python_full_version >= '3.6.0'",
+            "markers": "python_version >= '3.6'",
             "version": "==2022.12.7"
         },
         "cfgv": {
@@ -186,9 +186,7 @@
             "version": "==2.1.12"
         },
         "coverage": {
-            "extras": [
-
-            ],
+            "extras": [],
             "hashes": [
                 "sha256:027018943386e7b942fa832372ebc120155fd970837489896099f5cfa2890f79",
                 "sha256:11b990d520ea75e7ee8dcab5bc908072aaada194a794db9f6d7d5cfd19661e5a",
