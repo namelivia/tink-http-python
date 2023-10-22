@@ -1,0 +1,2 @@
+class NoAuthorizationCodeException(Exception):
+    pass

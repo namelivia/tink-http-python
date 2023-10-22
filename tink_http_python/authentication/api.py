@@ -6,7 +6,6 @@ class Api:
         self.api = api
 
     def refresh_token(self, client_id, client_secret, token) -> dict:
-
         return self.api.post(
             "oauth/token",
             {},
@@ -19,7 +18,6 @@ class Api:
         )
 
     def get_new_access_token(self, client_id, client_secret, code) -> dict:
-
         return self.api.post(
             "oauth/token",
             {},
