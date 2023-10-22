@@ -20,3 +20,6 @@ class Tink:
 
     def transactions(self):
         return self._transactions
+
+    def get_authorization_code_link(self):
+        return self._authentication.get_authorization_code_link()
