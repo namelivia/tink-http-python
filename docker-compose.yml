@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
       target: development
     container_name: tink-http-python
-    entrypoint: "pipenv run pytest"
+    entrypoint: "poetry run pytest"
     tty: false
     working_dir: /app
     volumes:
