@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "tink-http-python"
+version = "0.0.9"
+description = "Python SDK for accessing the tink API"
+authors = ["José Ignacio Amelivia Santiago <ohcan2@gmail.com>"]
+readme = "README.md"
+packages = [{include = "tink_http_python"}]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9"
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.31.0"
+pyhumps = "^3.8.0"
+dataclass-map-and-log = "0.1.2"
+tink-python-api-types = "0.0.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
+pytest-cov = "^4.1.0"
+pudb = "^2023.1"
+codecov = "^2.1.13"
+black = "^23.10.0"
+pre-commit = "^3.5.0"
+mock = "^5.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
