@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tink-http-python"
-version = "0.0.9"
+version = "0.0.10"
 description = "Python SDK for accessing the tink API"
 authors = ["José Ignacio Amelivia Santiago <ohcan2@gmail.com>"]
 readme = "README.md"
