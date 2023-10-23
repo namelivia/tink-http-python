@@ -10,10 +10,10 @@ class Tink:
     def __init__(self, *, client_id: str, client_secret: str, storage: Storage):
         config = Config(client_id=client_id, client_secret=client_secret)
         apiV2 = ApiV2()
-        authentication = Authentication(ApiV1(), storage, config)
+        self._authentication = Authentication(ApiV1(), storage, config)
         self._apiV1 = ApiV2()
-        self._accounts = Accounts(apiV2, authentication)
-        self._transactions = Transactions(apiV2, authentication)
+        self._accounts = Accounts(apiV2, self._authentication)
+        self._transactions = Transactions(apiV2, self._authentication)
 
     def accounts(self):
         return self._accounts
