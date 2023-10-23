@@ -11,7 +11,6 @@ class Authentication:
         self.api = Api(api)
         self.config = config
 
-    @staticmethod
     def get_authorization_code_link(self):
         return f"https://link.tink.com/1.0/transactions/connect-accounts/?client_id={self.config.client_id}&redirect_uri=https%3A%2F%2Fconsole.tink.com%2Fcallback&market=ES&locale=es_ES"
 

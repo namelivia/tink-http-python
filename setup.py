@@ -6,7 +6,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="tink-http-python",
-    version="0.0.10",
+    version="0.0.11",
     description="Python SDK for accessing the tink API ",
     long_description=long_description,
     long_description_content_type="text/markdown",
