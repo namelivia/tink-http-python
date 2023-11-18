@@ -7,8 +7,12 @@ from .config import Config
 
 
 class Tink:
-    def __init__(self, *, client_id: str, client_secret: str, storage: Storage):
-        config = Config(client_id=client_id, client_secret=client_secret)
+    def __init__(
+        self, *, client_id: str, client_secret: str, redirect_uri: str, storage: Storage
+    ):
+        config = Config(
+            client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri
+        )
         apiV2 = ApiV2()
         self._authentication = Authentication(ApiV1(), storage, config)
         self._apiV1 = ApiV2()

@@ -2,6 +2,7 @@ from .storage import Storage
 from tink_http_python.api import ApiV1
 from tink_http_python.config import Config
 from tink_http_python.exceptions import NoAuthorizationCodeException
+from urllib.parse import quote_plus
 from .api import Api
 
 
@@ -12,7 +13,10 @@ class Authentication:
         self.config = config
 
     def get_authorization_code_link(self):
-        return f"https://link.tink.com/1.0/transactions/connect-accounts/?client_id={self.config.client_id}&redirect_uri=https%3A%2F%2Fconsole.tink.com%2Fcallback&market=ES&locale=es_ES"
+        print(self.config.redirect_uri)
+        link = quote_plus(self.config.redirect_uri)
+
+        return f"https://link.tink.com/1.0/transactions/connect-accounts/?client_id={self.config.client_id}&redirect_uri={link}&market=ES&locale=es_ES"
 
     def get_refresh_token(self) -> str:
         try:

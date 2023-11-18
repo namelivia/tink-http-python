@@ -5,11 +5,15 @@ from tink_http_python.config import Config
 from mock import Mock
 
 
-class TestAccounts:
+class TestAuthentication:
     def setup_method(self):
         self.api = Mock(spec=ApiV1)
         self.storage = Mock(spec=Storage)
-        self.config = Config(client_id="CLIENT_ID", client_secret="CLIENT_SECRET")
+        self.config = Config(
+            client_id="CLIENT_ID",
+            client_secret="CLIENT_SECRET",
+            redirect_uri="https://RED.IRECT.URI/",
+        )
         self.authentication = Authentication(self.api, self.storage, self.config)
 
     def test_get_refresh_token(self):
@@ -48,3 +52,10 @@ class TestAccounts:
             },
         )
         assert access_token == "ACCESS_TOKEN"
+
+    def test_get_authorization_code_link(self):
+        link = self.authentication.get_authorization_code_link()
+        assert (
+            link
+            == "https://link.tink.com/1.0/transactions/connect-accounts/?client_id=CLIENT_ID&redirect_uri=https%3A%2F%2FRED.IRECT.URI%2F&market=ES&locale=es_ES"
+        )
