@@ -5,11 +5,15 @@ from tink_http_python.config import Config
 from mock import Mock
 
 
-class TestAccounts:
+class TestAuthentication:
     def setup_method(self):
         self.api = Mock(spec=ApiV1)
         self.storage = Mock(spec=Storage)
-        self.config = Config(client_id="CLIENT_ID", client_secret="CLIENT_SECRET")
+        self.config = Config(
+            client_id="CLIENT_ID",
+            client_secret="CLIENT_SECRET",
+            redirect_uri="REDIRECT_URI",
+        )
         self.authentication = Authentication(self.api, self.storage, self.config)
 
     def test_get_refresh_token(self):

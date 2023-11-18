@@ -9,7 +9,10 @@ class TestTink:
     def test_tink(self):
         storage = Mock(spec=Storage)
         tink = Tink(
-            client_id="CLIENT_ID", client_secret="CLIENT_SECRET", storage=storage
+            client_id="CLIENT_ID",
+            client_secret="CLIENT_SECRET",
+            redirect_uri="REDIRECT_URI",
+            storage=storage,
         )
         assert type(tink.accounts()) == Accounts
         assert type(tink.transactions()) == Transactions
