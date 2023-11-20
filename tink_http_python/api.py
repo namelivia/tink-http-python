@@ -12,17 +12,13 @@ class AbstractAPI(ABC):
 
     def post(self, uri: str, headers: dict, data: dict) -> dict:
         response = requests.post(self._build_url(uri), data=data, headers=headers)
-        if response.status_code == 200:
-            return response.json()
-        print(response.__dict__)
-        exit()
+        response.raise_for_status()
+        return response.json()
 
     def get(self, uri: str, headers: dict) -> dict:
         response = requests.get(self._build_url(uri), headers=headers)
-        if response.status_code == 200:
-            return response.json()
-        print(response.__dict__)
-        exit()
+        response.raise_for_status()
+        return response.json()
 
 
 class ApiV1(AbstractAPI):
