@@ -1,7 +1,10 @@
 from .storage import Storage
 from tink_http_python.api import ApiV1
 from tink_http_python.config import Config
-from tink_http_python.exceptions import NoAuthorizationCodeException
+from tink_http_python.exceptions import (
+    NoAuthorizationCodeException,
+    NoRefreshTokenException,
+)
 from urllib.parse import quote_plus
 from .api import Api
 
@@ -19,10 +22,7 @@ class Authentication:
         return f"https://link.tink.com/1.0/transactions/connect-accounts/?client_id={self.config.client_id}&redirect_uri={link}&market=ES&locale=es_ES"
 
     def get_refresh_token(self) -> str:
-        try:
-            code = self.storage.retrieve_authorization_code()
-        except FileNotFoundError:
-            raise NoAuthorizationCodeException
+        code = self.storage.retrieve_authorization_code()
         token_response = self.api.get_new_access_token(
             self.config.client_id, self.config.client_secret, code
         )
@@ -33,7 +33,7 @@ class Authentication:
     def get_access_token(self) -> str:
         try:
             refresh_token = self.storage.retrieve_refresh_token()
-        except FileNotFoundError:
+        except NoRefreshTokenException:
             refresh_token = self.get_refresh_token()
         token_response = self.api.refresh_token(
             self.config.client_id,
