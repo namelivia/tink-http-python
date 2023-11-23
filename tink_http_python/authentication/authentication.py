@@ -29,6 +29,7 @@ class Authentication:
         self.storage.store_new_refresh_token_refresh_token(
             token_response["refresh_token"]
         )
+        return token_response["refresh_token"]
 
     def get_access_token(self) -> str:
         try:
