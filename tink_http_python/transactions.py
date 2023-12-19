@@ -10,12 +10,16 @@ class Transactions:
         self.api = api
         self.auth = auth
 
-    def get(self):
+    def get(self, *, pageToken: str = None):
+        query_params = {}
+        if pageToken:
+            query_params["pageToken"] = pageToken
+        url = f"transactions?{'&'.join([f'{key}={value}' for key, value in query_params.items()])}"
         return DataclassMapper.map(
             TransactionsPage,
             humps.decamelize(
                 self.api.get(
-                    "transactions",
+                    url,
                     {"Authorization": f"Bearer {self.auth.get_access_token()}"},
                 )
             ),

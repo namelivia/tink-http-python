@@ -63,6 +63,16 @@ class TestTransactions:
         self.authentication.get_access_token.return_value = "Access token"
         transactions = self.transactions.get()
         self.api.get.assert_called_once_with(
-            "transactions", {"Authorization": "Bearer Access token"}
+            "transactions?", {"Authorization": "Bearer Access token"}
+        )
+        self.assert_equals_transactions_stub(transactions)
+
+    def test_get_another_page(self):
+        self.api.get.return_value = self.get_stub_contents("transactions.json")
+        self.authentication.get_access_token.return_value = "Access token"
+        transactions = self.transactions.get(pageToken="some_page_token")
+        self.api.get.assert_called_once_with(
+            "transactions?pageToken=some_page_token",
+            {"Authorization": "Bearer Access token"},
         )
         self.assert_equals_transactions_stub(transactions)
