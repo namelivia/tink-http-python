@@ -26,22 +26,14 @@
         "original": "TESCO STORES 3297"
       },
       "id": "d8f37f7d19c240abb4ef5d5dbebae4ef",
-      "identifiers": {
-        "providerTransactionId": "500015d3-acf3-48cc-9918-9e53738d3692"
-      },
-      "merchantInformation": {
-        "merchantCategoryCode": "string",
-        "merchantName": "string"
-      },
+      "providerTransactionId": "d8f37f7d19c240abb4ef5d5dbebae4ef",
       "providerMutability": "MUTABILITY_UNDEFINED",
       "reference": "string",
       "status": "BOOKED",
       "transactionDateTime": "string",
       "types": {
-        "financialInstitutionTypeCode": "DEB",
         "type": "DEFAULT"
       },
-      "valueDateTime": "2020-12-15T09:25:12Z"
     }
   ]
 }
