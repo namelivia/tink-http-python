@@ -732,13 +732,13 @@ testing-integration = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "jar
 
 [[package]]
 name = "tink-python-api-types"
-version = "0.0.3"
+version = "0.0.4"
 description = "Python types for the tink API entities"
 optional = false
 python-versions = ">=3.6, <4"
 files = [
-    {file = "tink-python-api-types-0.0.3.tar.gz", hash = "sha256:c6dd2b022fc1b6b0679b5c69ed1b01441d7a2f6dfdb126255843d4ba6e804154"},
-    {file = "tink_python_api_types-0.0.3-py3-none-any.whl", hash = "sha256:63c1d8acb52d7ad6ef0f28c29cbb37dab18d8b54f26176ff78ea7368f50054d0"},
+    {file = "tink-python-api-types-0.0.4.tar.gz", hash = "sha256:0c559332ba964c253ebfaf25a27476765923241b7a61adda2d9fa65c87fbc4ae"},
+    {file = "tink_python_api_types-0.0.4-py3-none-any.whl", hash = "sha256:c4fd0a29b152c4b09eb50d4ec34c31942b736692bb3ca73946d93f16ab4da673"},
 ]
 
 [package.dependencies]
@@ -874,4 +874,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "812b62fff6b943eff70f05d2c4693dcb8da0de8e86d46b9fa134f5ad66b96160"
+content-hash = "3389b659f5dbd5305299cb1ddc62dd72b565daf27987b4779f576c8cdf4533a1"
