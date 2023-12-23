@@ -26,7 +26,9 @@
         "original": "TESCO STORES 3297"
       },
       "id": "d8f37f7d19c240abb4ef5d5dbebae4ef",
-      "providerTransactionId": "d8f37f7d19c240abb4ef5d5dbebae4ef",
+      "identifiers": {
+        "providerTransactionId": "d8f37f7d19c240abb4ef5d5dbebae4ef"
+      },
       "providerMutability": "MUTABILITY_UNDEFINED",
       "reference": "string",
       "status": "BOOKED",
