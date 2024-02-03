@@ -22,7 +22,7 @@ dataclass-map-and-log = "0.1.2"
 tink-python-api-types = "0.0.4"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.4.2"
+pytest = ">=7.4.2,<9.0.0"
 pytest-cov = "^4.1.0"
 pudb = ">=2023.1,<2025.0"
 codecov = "^2.1.13"
