@@ -16,7 +16,6 @@ class Authentication:
         self.config = config
 
     def get_authorization_code_link(self):
-        print(self.config.redirect_uri)
         link = quote_plus(self.config.redirect_uri)
 
         return f"https://link.tink.com/1.0/transactions/connect-accounts/?client_id={self.config.client_id}&redirect_uri={link}&market=ES&locale=es_ES"
