@@ -2,5 +2,5 @@ class NoAuthorizationCodeException(Exception):
     pass
 
 
-class NoRefreshTokenException(Exception):
+class NoAccessTokenException(Exception):
     pass
