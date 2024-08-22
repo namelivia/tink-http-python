@@ -19,7 +19,7 @@ python = "^3.8"
 requests = "^2.31.0"
 pyhumps = "^3.8.0"
 dataclass-map-and-log = "0.1.2"
-tink-python-api-types = "0.0.4"
+tink-python-api-types = "0.0.5"
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.4.2,<9.0.0"
