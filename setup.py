@@ -12,7 +12,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/namelivia/tink-http-python",
     author="José Ignacio Amelivia Santiago",
-    author_email="jignacio.amelivia@gmail.com",
+    author_email="hello@namelivia.com",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
