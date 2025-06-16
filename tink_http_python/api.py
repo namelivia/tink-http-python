@@ -30,8 +30,7 @@ class AbstractAPI(ABC):
         response = requests.get(self._build_url(uri), headers=headers)
         response.raise_for_status()
         logger.debug(f"Response body: {response.text}")
-        data = response.json()
-        return data
+        return response.json()
 
 
 class ApiV1(AbstractAPI):
