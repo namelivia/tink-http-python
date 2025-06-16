@@ -1,5 +1,16 @@
+import os
 import requests
+import logging
 from abc import ABC, abstractmethod
+
+
+log_level = os.getenv("LOG_LEVEL", "INFO").upper()
+
+logging.basicConfig(
+    level=getattr(logging, log_level, logging.INFO),
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+)
+logger = logging.getLogger(__name__)
 
 
 class AbstractAPI(ABC):
@@ -18,6 +29,7 @@ class AbstractAPI(ABC):
     def get(self, uri: str, headers: dict) -> dict:
         response = requests.get(self._build_url(uri), headers=headers)
         response.raise_for_status()
+        logger.debug(f"Response body: {response.text}")
         return response.json()
 
 
