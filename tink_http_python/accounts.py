@@ -20,3 +20,7 @@ class Accounts:
                 )
             ),
         )
+
+    @staticmethod
+    def calculate_real_amount(value):
+        return int(value.unscaled_value) / (10 ** int(value.scale))
