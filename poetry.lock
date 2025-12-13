@@ -578,14 +578,14 @@ virtualenv = ">=20.10.0"
 
 [[package]]
 name = "pudb"
-version = "2025.1.4"
+version = "2025.1.5"
 description = "A full-screen, console-based Python debugger"
 optional = false
 python-versions = "~=3.8"
 groups = ["dev"]
 files = [
-    {file = "pudb-2025.1.4-py3-none-any.whl", hash = "sha256:e60b472c414bc9d968cac30a2d7c70c6191f6ca1c480c21f030e3feef93de2c9"},
-    {file = "pudb-2025.1.4.tar.gz", hash = "sha256:74069c10c99d20d36c2906fe855e00d50b6602013c4881db37416e32787aea06"},
+    {file = "pudb-2025.1.5-py3-none-any.whl", hash = "sha256:e40c69f102d534cc7b86020c0217e3d424ee81b14a229d068ac122089c301f59"},
+    {file = "pudb-2025.1.5.tar.gz", hash = "sha256:e6dedb81fc3c8cdcd66cf62e86337cb913570ebb2c994c9ab52012d059e086ad"},
 ]
 
 [package.dependencies]
